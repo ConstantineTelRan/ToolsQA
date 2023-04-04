@@ -9,6 +9,7 @@ import page.ProgressBarPage2;
 public class ProgressBarTest extends TestBase {
     ProgressBarPage progressBarPage;
     String url = "https://demoqa.com/progress-bar";
+
     String percent = Integer.toString(faker.number().numberBetween(10, 99));
     String expectedProgressValue = percent + "%";
     String actualProgressValue;
