@@ -8,14 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.swing.plaf.PanelUI;
 import java.time.Duration;
 
-public class ProgressBarPage {
-    WebDriver driver;
-
+public class ProgressBarPage extends PageBase {
     public ProgressBarPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//button[@id=\"startStopButton\"]")
@@ -24,17 +22,16 @@ public class ProgressBarPage {
     @FindBy(xpath = "//div[@role=\"progressbar\"]")
     private WebElement progressBar;
 
-    private final String ATTRIBUTE_NAME = "aria-valuenow";
+    private final String ATTRIBUTE_NAME = "class";
 
     public void clickToStart() {
-//        click(startStopButton);
         startStopButton.click();
     }
+    //TODO доработать метод clickToStart
 
     public void explicitWaitPercent(String percent) {
         new WebDriverWait(driver, Duration.ofSeconds(30))
                 .until(ExpectedConditions.attributeToBe(progressBar, ATTRIBUTE_NAME, percent));
-
     }
 
     public void fluentWaitPercent(String percent) {
@@ -45,10 +42,11 @@ public class ProgressBarPage {
 
     }
 
+
+
     public void clickToStop(String percent) {
         explicitWaitPercent(percent);
 //        fluentWaitPercent(percent);
-//        click(startStopButton);
         startStopButton.click();
     }
 
