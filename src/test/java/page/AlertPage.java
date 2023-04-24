@@ -17,6 +17,7 @@ public class AlertPage extends PageBase{
     @FindBy(xpath = "//button[@id=\"timerAlertButton\"]")
     private WebElement timerAlertButton;
 
+
     public void clickToTimerAlertButton() {
         timerAlertButton.click();
         new WebDriverWait(driver, Duration.ofSeconds(6))
