@@ -31,9 +31,10 @@ public class DragAndDropTest extends TestBase {
     public void revertDDTest() {
         dragAndDropPage = new DragAndDropPage(driver);
         dragAndDropPage.clickTo(dragAndDropPage.revertDraggableTab);
-        Point startLoc = dragAndDropPage.getLoc(dragAndDropPage.revertable);
-        dragAndDropPage.dragAndDrop(dragAndDropPage.revertable, dragAndDropPage.simpleDropContainer);
-        Point finishLoc = dragAndDropPage.getLoc(dragAndDropPage.revertable);
+        Point startLoc = dragAndDropPage.getLoc(dragAndDropPage.getRevertable());
+        dragAndDropPage.dragAndDrop(dragAndDropPage.getRevertable(),
+                dragAndDropPage.getSimpleDropContainer());
+        Point finishLoc = dragAndDropPage.getLoc(dragAndDropPage.getRevertable());
         Assert.assertEquals(startLoc, finishLoc);
     }
 

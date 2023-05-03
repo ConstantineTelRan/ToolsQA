@@ -21,11 +21,21 @@ public class DragAndDropPage extends PageBase{
     @FindBy(xpath = "//a[@id=\"droppableExample-tab-revertable\"]")
     public WebElement revertDraggableTab;
 
+
+
     @FindBy(xpath = "//div[@id=\"revertable\"]")
-    public WebElement revertable;
+    private WebElement revertable;
 
     @FindBy(xpath = "//div[@id=\"simpleDropContainer\"]//div[@id=\"droppable\"]")
-    public WebElement simpleDropContainer;
+    private WebElement simpleDropContainer;
+
+    public WebElement getRevertable() {
+        return revertable;
+    }
+
+    public WebElement getSimpleDropContainer() {
+        return simpleDropContainer;
+    }
 
 
     public void dragAndDrop(WebElement elementDraggable, WebElement elementDroppable) {
