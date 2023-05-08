@@ -65,15 +65,4 @@ public class DragAndDropPage extends PageBase{
                         "position: relative; left: 0px; top: 0px;"));
     }
 
-    public void waitNotRevert() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
-                .until(ExpectedConditions.attributeToBe(notRevertable, "style",
-                        "position: relative; left: 275px; top: -17px;"));
-    }
-
-
-
-
-
-
 }

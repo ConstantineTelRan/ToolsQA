@@ -40,13 +40,13 @@ public class DragAndDropTest extends TestBase {
     }
 
     @Test
-    public void notRevertDDTest() {
+    public void notRevertDDTest() throws InterruptedException {
         dragAndDropPage = new DragAndDropPage(driver);
         dragAndDropPage.clickTo(dragAndDropPage.revertDraggableTab);
         dragAndDropPage.dragAndDrop(dragAndDropPage.notRevertable, dragAndDropPage.revertableDropContainer);
         Point finishLoc = dragAndDropPage.getLoc(dragAndDropPage.notRevertable);
         dragAndDropPage.dragAndDrop(dragAndDropPage.notRevertable, dragAndDropPage.revertable);
-        dragAndDropPage.waitNotRevert();
+        Thread.sleep(3000);
         Point secondFinishLoc = dragAndDropPage.getLoc(dragAndDropPage.notRevertable);
         Assert.assertEquals(finishLoc, secondFinishLoc);
 
