@@ -19,6 +19,7 @@ public class TestBase {
     @BeforeMethod
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
 //        driver = new FirefoxDriver();
