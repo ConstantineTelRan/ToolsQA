@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,7 +25,8 @@ public class TestBase {
         driver = new ChromeDriver(options);
 //        driver = new FirefoxDriver();
 //        driver = new SafariDriver();
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(2560,1440));
+//        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
     }
 
