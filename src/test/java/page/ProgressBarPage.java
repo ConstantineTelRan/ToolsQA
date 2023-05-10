@@ -45,8 +45,8 @@ public class ProgressBarPage extends PageBase {
 
 
     public void clickToStop(String percent) {
-        explicitWaitPercent(percent);
-//        fluentWaitPercent(percent);
+//        explicitWaitPercent(percent);
+        fluentWaitPercent(percent);
         startStopButton.click();
     }
 
